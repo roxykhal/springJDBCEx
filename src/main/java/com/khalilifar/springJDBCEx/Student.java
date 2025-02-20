@@ -1,5 +1,8 @@
 package com.khalilifar.springJDBCEx;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
     private int rollNo;
     private String name;
@@ -29,6 +32,7 @@ public class Student {
         this.marks = marks;
     }
 
+    //String representation of the student object
     @Override
     public String toString() {
         return "Student{" +
