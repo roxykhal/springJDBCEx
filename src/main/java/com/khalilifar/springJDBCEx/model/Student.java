@@ -1,8 +1,11 @@
-package com.khalilifar.springJDBCEx;
+package com.khalilifar.springJDBCEx.model;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+//set type to prototype as we are going to have multiple objects
+@Scope("prototype")
 public class Student {
     private int rollNo;
     private String name;

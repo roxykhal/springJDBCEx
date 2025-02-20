@@ -1,13 +1,16 @@
 package com.khalilifar.springJDBCEx;
-
+import com.khalilifar.springJDBCEx.model.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class SpringJdbcExApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJdbcExApplication.class, args);
+		ApplicationContext context = SpringApplication.run(SpringJdbcExApplication.class, args);
+
+		Student student = context.getBean(Student.class);
 	}
 
 }
