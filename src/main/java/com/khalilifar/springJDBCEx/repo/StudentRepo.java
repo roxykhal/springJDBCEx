@@ -26,7 +26,7 @@ public class StudentRepo {
 
         String sql = "insert into student (rollno, name, marks) values (?,?,?)";
         int rowsAffected = jdbc.update(sql, student.getRollNo(), student.getName(), student.getMarks());
-        System.out.println(rowsAffected + "affected");
+        System.out.println(rowsAffected + " affected");
     }
 
     public List<Student> findAll() {
