@@ -1,5 +1,6 @@
 package com.khalilifar.springJDBCEx.repo;
 import com.khalilifar.springJDBCEx.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.stereotype.Repository;
@@ -16,12 +17,16 @@ public class StudentRepo {
         return jdbc;
     }
 
+    @Autowired
     public void setJdbc(JdbcTemplate jdbc) {
         this.jdbc = jdbc;
     }
 
     public void save(Student student) {
-        System.out.println("Added");
+
+        String sql = "insert into student (rollno, name, marks) values (?,?,?)";
+        int rowsAffected = jdbc.update(sql, student.getRollNo(), student.getName(), student.getMarks());
+        System.out.println(rowsAffected + "affected");
     }
 
     public List<Student> findAll() {
