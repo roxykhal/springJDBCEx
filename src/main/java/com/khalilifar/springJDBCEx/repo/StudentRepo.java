@@ -38,6 +38,7 @@ public class StudentRepo {
 
         //RowMapper is an interface used in Spring JDBC to map rows of a ResultSet to Java objects
 
+        //check how to use lambda, then shorten this code
         RowMapper<Student> mapper = new RowMapper<Student>() {
             @Override
             public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
